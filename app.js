@@ -61,7 +61,7 @@ function imc(peso, altura) {
 
 console.log(imc(77, 1.73))
 
-addEventListener('click', (() => console.log(imc(50, 1.60))))
+// addEventListener('click', (() => console.log(imc(50, 1.60))))
 
 //
 function verifyTruthy(value) {
@@ -102,6 +102,80 @@ function typeOfData(value) {
 console.log(typeOfData({}))
 
 addEventListener('scroll', (() => {
-  const event = 'Guilherme Queiroz'
-  console.log(event)
+  console.log('teste')
 }))
+
+console.log(Math.PI)
+
+console.log(Math.random())
+
+console.log(Math.round(5 + 5 + 10 + 20 / 2))
+
+const personalData = {
+  first_name: 'Guilherme',
+  last_name: 'Queiroz',
+  age: 26,
+  full_name: function () {
+    const full_name = `${this.first_name} ${this.last_name}`
+    return full_name
+  }
+}
+
+console.log(personalData.full_name())
+
+const car = {
+  preco: 1000,
+  portas: 4,
+  marca: `Audi`
+}
+car.preco = 3000
+console.log(car)
+
+const dog = {
+  raça: `labrador`,
+  cor: `preto`,
+  idade: 10,
+  acao: function (event) {
+    const latir = event
+    if (latir) {
+      return "Latindo ao ver homem"
+    } else {
+      return "Cachorro em paz"
+    }
+  }
+}
+
+console.log(dog.acao(true))
+
+const btn = document.querySelector('.btn')
+
+const string = 'Teste'
+
+console.log(string.charAt(0))
+console.log(string.length)
+console.log(string.replace('este', 'estando'))
+console.log(string.toLowerCase())
+
+btn.addEventListener('click', (() => console.log('clicou')))
+// btn.setPointerCapture()
+// btn.after()
+// btn.append()
+// btn.animate()
+
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  navigator.clipboard.writeText(copyText.value);
+  alert("Copied the text: " + copyText.value);
+}
+
+const numbers = [2, 4, 6, 8, 11]
+
+const numbersAreEven = numbers.every((num) => num % 2 === 0)
+
+console.log({ numbersAreEven })
+
+const numberAreEven = numbers.some((num) => num % 2 === 0)
+
+console.log({ numberAreEven })
+
