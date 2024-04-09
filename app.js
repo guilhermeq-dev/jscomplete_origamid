@@ -166,7 +166,7 @@ function myFunction() {
   var copyText = document.getElementById("myInput");
   copyText.select();
   navigator.clipboard.writeText(copyText.value);
-  alert("Copied the text: " + copyText.value);
+  console.log("Copied the text: " + copyText.value);
 }
 
 const numbers = [2, 4, 6, 8, 11]
@@ -179,3 +179,77 @@ const numberAreEven = numbers.some((num) => num % 2 === 0)
 
 console.log({ numberAreEven })
 
+const videoGames = ['Switch', 'PS4', 'XBOX', '3DS']
+
+videoGames.forEach((item, index, arr) => {
+  console.log(item, index, arr) // pode ser passado esses 3 parametros dentro do forEach
+})
+
+const worldCup = ['1959', '1962', '1970', '1994', '2002']
+
+for (i = 0; i < worldCup.length; i++) {
+  console.log(`O Brasil ganhou a copa de ${worldCup[i]}`)
+}
+
+worldCup.forEach((item) => {
+  console.log(`O Brasil ganhou a copa de ${item}`)
+})
+
+const fruits = ['Banana', 'Maçã', 'Pera', 'Uva', 'Melância']
+
+for (i = 0; i < fruits.length; i++) {
+  console.log(fruits[i])
+  if (fruits[i] === 'Pera') {
+    break
+  }
+}
+
+const lastFruit = fruits[fruits.length - 1] // pegando ultimo item do array
+console.log(lastFruit)
+
+let scroll = 1000;
+
+scroll += 500
+
+console.log(scroll)
+
+const possuiCasa = true
+const possuiCarro = true
+let darCredito = possuiCarro && possuiCasa ? true : false
+// if (possuiCarro && possuiCasa) {
+//   darCredito = true
+//   console.log(darCredito)
+// } else {
+//   darCredito = false
+//   console.log(darCredito)
+// }
+console.log(darCredito)
+
+// Por qual motivo o código abaixo retorna com erros? Somente variável declarada com var fura o escopo
+{
+  var cor = 'preto';
+  var marca = 'Fiat';
+  var portas = 4;
+}
+console.log(cor, marca, portas);
+
+// Como corrigir o erro abaixo? R: Declarar a variável `dois` e alterar o retorno
+const dois = 2;
+function somarDois(x) {
+  return x + dois;
+}
+function dividirDois(x) {
+  return x / dois;
+}
+console.log(somarDois(4))
+console.log(dividirDois(6))
+
+// O que fazer para total retornar 500?
+const numero2 = 50;
+
+for (let numero = 0; numero < 10; numero++) {
+  console.log(numero);
+}
+
+const total = 10 * numero2;
+console.log(total);
