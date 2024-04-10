@@ -66,3 +66,33 @@ imgs.forEach(() => {
 });
 
 imgs.forEach(() => console.log(i++));
+
+const menu = document.querySelector('.menu').classList
+console.log(menu)
+
+// Adicione a classe ativo a todos os itens do menu
+
+const menuItems = document.querySelectorAll('.menu a')
+menuItems.forEach((item) => {
+  item.classList.add('ativo')
+})
+console.log(menuItems)
+
+// Remove a classe ativo de todos os itens do menu e mantenha apenas no primeiro
+menuItems.forEach((item) => {
+  if (item.innerText !== 'ANIMAIS') {
+    item.classList.remove('ativo')
+  }
+})
+console.log(menuItems)
+// Verifique se as imagens possuem o atributo alt
+imgs.forEach((item) => {
+  console.log(item.hasAttribute('alt'))
+})
+// Modifique o href do link externo no menu
+menuItems.forEach((item) => {
+  if (item.href === 'https://www.origamid.com/') {
+    const link = item.href = "www.google.com"
+    console.log(link)
+  }
+})
