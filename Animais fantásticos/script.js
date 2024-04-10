@@ -96,3 +96,29 @@ menuItems.forEach((item) => {
     console.log(link)
   }
 })
+
+// Verifique a distância da primeira imagem
+// em relação ao topo da página
+//
+const img2 = document.querySelector('img')
+console.log(img2.offsetTop)
+
+// Retorne a soma da largura de todas as imagens
+const image = document.querySelectorAll('img')
+let soma = 0;
+image.forEach((item) => {
+  const rect = item.getBoundingClientRect()
+  console.log(rect)
+  soma += rect.width
+})
+console.log(soma)
+
+// Se o browser for menor que 720px,
+// adicione a classe menu-mobile ao menu
+
+const browserSmall = window.matchMedia('(max-width: 720px').matches;
+
+if (browserSmall) {
+  const menu = document.querySelector('.menu')
+  menu.classList.add('menu-mobile')
+}
