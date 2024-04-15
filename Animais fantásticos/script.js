@@ -92,7 +92,7 @@ imgs.forEach((item) => {
 // Modifique o href do link externo no menu
 menuItems.forEach((item) => {
   if (item.href === 'https://www.origamid.com/') {
-    const link = item.href = "www.google.com"
+    const link = item.href = "https://www.google.com"
     console.log(link)
   }
 })
@@ -122,3 +122,39 @@ if (browserSmall) {
   const menu = document.querySelector('.menu')
   menu.classList.add('menu-mobile')
 }
+
+// Tipos de eventos
+
+const imagem = document.querySelector('img');
+
+function callback(event) {
+  console.log(event.currentTarget) // this
+  console.log(event.target) // onde o click ocorreu
+  console.log(event.type) // tipo do evento
+  console.log(event.path) // caminho
+}
+
+imagem.addEventListener('click', callback);
+
+const listImage = document.querySelector('.animais-lista')
+
+listImage.addEventListener('click', callback)
+
+//////
+
+const link = document.querySelector('a[href^="http"]');
+
+function handleExternalLink(event) {
+  event.preventDefault();
+  console.log('Clicou no link externo')
+}
+
+link.addEventListener('click', handleExternalLink)
+
+function handleKeyboard(event) {
+  if (event.key === 'v') {
+    document.body.classList.toggle('azul')
+  }
+}
+
+window.addEventListener('keydown', handleKeyboard)
