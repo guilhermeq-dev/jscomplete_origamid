@@ -127,18 +127,18 @@ if (browserSmall) {
 
 const imagem = document.querySelector('img');
 
-function callback(event) {
-  console.log(event.currentTarget) // this
-  console.log(event.target) // onde o click ocorreu
-  console.log(event.type) // tipo do evento
-  console.log(event.path) // caminho
-}
+// function callback(event) {
+//   console.log(event.currentTarget) // this
+//   console.log(event.target) // onde o click ocorreu
+//   console.log(event.type) // tipo do evento
+//   console.log(event.path) // caminho
+// }
 
-imagem.addEventListener('click', callback);
+// imagem.addEventListener('click', callback);
 
-const listImage = document.querySelector('.animais-lista')
+// const listImage = document.querySelector('.animais-lista')
 
-listImage.addEventListener('click', callback)
+// listImage.addEventListener('click', callback)
 
 //////
 
@@ -158,3 +158,61 @@ function handleKeyboard(event) {
 }
 
 window.addEventListener('keydown', handleKeyboard)
+
+// ////
+function handleImg(event) {
+  console.log(event.currentTarget.getAttribute('src'))
+}
+
+image.forEach((img) => {
+  img.addEventListener('click', handleImg)
+})
+
+// Quando o usuário clicar nos links internos do site,
+// adicione a classe ativo ao item clicado e remova dos
+// demais itens caso eles possuam a mesma. Previna
+// o comportamento padrão desses links
+
+const linksInternos = document.querySelectorAll('a[href^="#"]')
+
+function handleLink(event) {
+  event.preventDefault()
+  linksInternos.forEach((link) => {
+    link.classList.remove('ativo')
+  })
+  event.currentTarget.classList.add('ativo')
+}
+
+linksInternos.forEach((links) => {
+  links.addEventListener('click', handleLink)
+})
+
+
+// Selecione todos os elementos do site começando a partir do body,
+// ao clique mostre exatamente quais elementos estão sendo clicados
+const bodyAll = document.querySelectorAll('body *')
+
+bodyAll.forEach((item) => {
+  item.addEventListener('click', (event) => {
+    console.log(event.currentTarget)
+  })
+})
+
+// Utilizando o código anterior, ao invés de mostrar no console,
+// remova o elemento que está sendo clicado, o método remove() remove um elemento
+
+// bodyAll.forEach((item) => {
+//   item.addEventListener('click', (event) => {
+//     event.currentTarget.remove()
+//   })
+// })
+
+// Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+
+function handleClickT(event) {
+  if (event.key === 't') {
+    document.documentElement.classList.toggle('textomaior')
+  }
+}
+
+window.addEventListener('keydown', handleClickT)

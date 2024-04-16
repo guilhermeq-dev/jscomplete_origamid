@@ -229,3 +229,7 @@ body {
 .azul {
   background: firebrick;
 }
+
+html.textomaior {
+  font-size: 150%;
+}
